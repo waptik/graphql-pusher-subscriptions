@@ -2,7 +2,7 @@
   "name": "@waptik/graphql-pusher-subscriptions",
   "version": "0.1.0",
   "description": "GraphQL subscriptions with Pusher",
-  "author": "Sachin Pandey",
+  "author": "@waptik @alefemafra @sachinp-git",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
