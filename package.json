@@ -6,7 +6,6 @@
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "watch": "tsc -w",
     "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0",
     "build": "rollup -c",
     "incver": "npm version patch -m ':package: release %s'",
