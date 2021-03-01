@@ -1,4 +1,4 @@
-# graphql-pusher-subscriptions. A fork of [alefemafra/graphql-pusher-subscriptions](https://github.com/alefemafra/graphql-pusher-subscriptions)
+# @waptik/graphql-pusher-subscriptions. A fork of [alefemafra/graphql-pusher-subscriptions](https://github.com/alefemafra/graphql-pusher-subscriptions)
 
 This package implements the PubSubEngine Interface from the graphql-subscriptions package and also the new AsyncIterator interface. It allows you to connect your subscriptions manger to a Pusher channel and bind to multiple events.
 
@@ -7,7 +7,7 @@ This package implements the PubSubEngine Interface from the graphql-subscription
 After creating an account and configuring a channel on pusher, you get the necessary config information about your application. Keep the config information in a safe place.
 
 ```javascript
-import { PusherChannel } from "graphql-pusher-subscriptions";
+import { PusherChannel } from "@waptik/graphql-pusher-subscriptions";
 
 const pubsub = new PusherChannel({
   appId: "YOUR_APP_ID",
