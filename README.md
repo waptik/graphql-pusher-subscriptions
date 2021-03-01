@@ -1,4 +1,4 @@
-# graphql-pusher-subscriptions(fork of alefemafra/graphql-pusher-subscriptions)
+# graphql-pusher-subscriptions. A fork of [alefemafra/graphql-pusher-subscriptions](alefemafra/graphql-pusher-subscriptions)
 
 This package implements the PubSubEngine Interface from the graphql-subscriptions package and also the new AsyncIterator interface. It allows you to connect your subscriptions manger to a Pusher channel and bind to multiple events.
 

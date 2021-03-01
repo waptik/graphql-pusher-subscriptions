@@ -1,17 +1,17 @@
 import { PubSubAsyncIterator } from './pubsub-async-iterator'
 import { PubSubEngine } from 'graphql-subscriptions'
 import SubPusher from 'pusher-js';
-import Pusher from 'pusher';
+import * as Pusher from 'pusher';
 
 export class PusherChannel implements PubSubEngine {
   private subPusher: any;
   private pubPusher: any;
   private channel: any;
-  private channelName : string;
+  private channelName: string;
   private subIdCounter: number;
   private subscriptions: number[];
 
-  constructor(options: Pusher.ClusterOptions & { channel: string}) {
+  constructor(options: Pusher.ClusterOptions & { channel: string }) {
     this.subPusher = new SubPusher(options.key, {
       cluster: options.cluster,
     });
@@ -29,7 +29,7 @@ export class PusherChannel implements PubSubEngine {
 
   public async subscribe(eventName: string, onMessage: Function): Promise<number> {
     const subscribeStatus = this.pusherSubscribeStatus();
-    if(!subscribeStatus) {
+    if (!subscribeStatus) {
       this.subPusher.connect();
     }
     this.subIdCounter = this.subIdCounter + 1;
@@ -40,13 +40,13 @@ export class PusherChannel implements PubSubEngine {
 
   public unsubscribe(subscriptionId: number) {
     this.subscriptions = this.subscriptions.filter(item => item !== subscriptionId);
-    if(this.subscriptions.length === 0) {
+    if (this.subscriptions.length === 0) {
       this.subPusher.disconnect();
     }
   }
 
   public pusherSubscribeStatus(): boolean {
-    if(this.subPusher.connection.state === 'connected') return true;
+    if (this.subPusher.connection.state === 'connected') return true;
     return false;
   }
 
