@@ -9,7 +9,6 @@
     "watch": "tsc -w",
     "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0",
     "build": "rollup -c",
-    "prepublishOnly": "npm run build",
     "incver": "npm version patch -m ':package: release %s'",
     "bump": "npm run incver && git push --follow-tags && npm publish"
   },
