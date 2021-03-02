@@ -31,8 +31,15 @@ jobs:
         with:
           registry-url: "https://registry.npmjs.org"
 
-      - run: npm install
-      - run: npm publish
+      - run: |
+          echo Install dependencies
+          npm ci
+          echo Build source
+          npm run build --if-present
+          echo Delete source directory
+          rm -rf src
+          echo List directories & folders
+          ls
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -50,7 +57,6 @@ jobs:
           scope: "@waptik"
 
       - run: npm install
-      - run: npm run gpr
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
