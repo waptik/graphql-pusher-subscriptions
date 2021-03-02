@@ -1,6 +1,6 @@
 {
   "name": "@waptik/graphql-pusher-subscriptions",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "GraphQL subscriptions with Pusher",
   "author": "@waptik @alefemafra @sachinp-git",
   "license": "MIT",
