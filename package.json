@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0",
     "build": "rollup -c",
-    "incver": "npm version patch -m \":package: release %s\"",
+    "incver": "npm version patch -m \":package: release v%s\"",
     "bump": "npm run incver && git push --follow-tags"
   },
   "dependencies": {

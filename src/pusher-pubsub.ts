@@ -15,6 +15,11 @@ export class PusherChannel implements PubSubEngine {
     this.subPusher = new SubPusher(options.key, {
       cluster: options.cluster,
     });
+
+    delete options.encrypted;
+
+    options.useTLS = options.useTLS ?? true // defaults to true if not available
+
     this.channelName = options.channel;
     this.pubPusher = new Pusher(options);
     this.channel = this.subPusher.subscribe(this.channelName);
