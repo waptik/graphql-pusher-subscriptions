@@ -9,6 +9,7 @@
     "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0",
     "build": "tsc -p .",
     "incver": "npm version patch -m \":package: release v%s\"",
+    "push": "npm run incver && git push",
     "bump": "npm run incver && git push --follow-tags"
   },
   "dependencies": {
