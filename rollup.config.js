@@ -1,7 +1,4 @@
-import rimraf from 'rimraf'
 import typescript from 'rollup-plugin-typescript2'
-
-rimraf.sync('lib')
 
 export default {
   input: 'src/index.ts',
@@ -9,7 +6,7 @@ export default {
     file: 'lib/index.js',
     format: 'cjs'
   },
-  external: ['graphql-subscriptions', 'iterall'],
+  external: ['graphql-subscriptions', 'iterall', 'pusher-js', 'pusher'],
   plugins: [
     typescript()
   ]
