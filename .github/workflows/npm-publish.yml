@@ -38,6 +38,8 @@ jobs:
           npm run build --if-present
           echo Delete source directory
           rm -rf src
+          echo Proceed to publishing on NPM
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -54,7 +56,14 @@ jobs:
           registry-url: "https://npm.pkg.github.com/"
           scope: "@waptik"
 
-      - run: npm install
-      - run: npm publish
+      - run: |
+          echo Install dependencies
+          npm ci
+          echo Build source
+          npm run build --if-present
+          echo Delete source directory
+          rm -rf src
+          echo Proceed to publishing on GPR
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
