@@ -4,6 +4,10 @@
   "description": "GraphQL subscriptions with Pusher",
   "author": "@waptik @alefemafra @sachinp-git",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waptik/graphql-pusher-subscriptions.git"
+  },
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0",
