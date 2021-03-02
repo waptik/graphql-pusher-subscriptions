@@ -4,10 +4,10 @@
   "description": "GraphQL subscriptions with Pusher",
   "author": "@waptik @alefemafra @sachinp-git",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Who need tests anyway? ¯\\_(ツ)_/¯ \" && exit 0",
-    "build": "rollup -c",
+    "build": "tsc -p .",
     "incver": "npm version patch -m \":package: release v%s\"",
     "bump": "npm run incver && git push --follow-tags"
   },
@@ -18,9 +18,8 @@
     "pusher-js": "^6.0.3"
   },
   "devDependencies": {
-    "@types/node": "^12.12.14",
-    "rollup": "^1.27.8",
-    "rollup-plugin-typescript2": "^0.25.2",
-    "typescript": "^3.7.2"
+    "@types/node": "^14.14.31",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
   }
 }

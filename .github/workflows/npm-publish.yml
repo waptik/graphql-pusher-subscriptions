@@ -22,13 +22,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci --ignore-scripts
       - run: npm run build --if-present
-      - run: ls
         name: Build
+      - run: rm -rf src
+        name: Delete src directory
+      - run: ls
+        name: List directories
       - run: npm test
+        name: Run tests
         env:
           CI: true
 
-  publish:
+  publish-npm:
     if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
@@ -37,9 +41,28 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      - name: Publish
+      - name: Publish to NPM
         run: |
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
           npm publish --access public --ignore-scripts
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-gpr:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+        registry-url: https://npm.pkg.github.com/
+        scope: "@waptik"
+      - name: Publish to Github Package Registry
+      - run: |
+          npm ci
+          echo registry=https://npm.pkg.github.com/waptik >> .npmrc
+          npm publish
+        env:
+        NODE_AUTH_TOKEN: ${{secrets.PUBLISH_GITHUB_TOKEN}}

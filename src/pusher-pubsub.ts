@@ -1,7 +1,7 @@
 import { PubSubAsyncIterator } from './pubsub-async-iterator'
 import { PubSubEngine } from 'graphql-subscriptions'
 import SubPusher from 'pusher-js';
-import * as Pusher from 'pusher';
+import Pusher from 'pusher';
 
 export class PusherChannel implements PubSubEngine {
   private subPusher: any;

@@ -1,20 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "rootDir": "src",
-    "outDir": "lib",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2019", "dom"],
     "declaration": true,
-    "removeComments": true,
-    "lib": [
-      "es6",
-      "esnext"
-    ],
-    "strict": true
-  },
-  "exclude": [
-    "node_modules",
-    "lib"
-  ]
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": true,
+    "types": ["node"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  }
 }
