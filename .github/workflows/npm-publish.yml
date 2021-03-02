@@ -38,8 +38,6 @@ jobs:
           npm run build --if-present
           echo Delete source directory
           rm -rf src
-          echo List directories & folders
-          ls
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
