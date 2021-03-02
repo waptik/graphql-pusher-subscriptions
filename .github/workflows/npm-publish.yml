@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           registry-url: "https://registry.npmjs.org"
+          tag-name: "0.1.9"
 
       - run: |
           echo Install dependencies
